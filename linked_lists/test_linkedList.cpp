@@ -30,17 +30,6 @@ int main () {
     }
     list2.print();
 
-
-    Node *toDel = new Node(0);
-    list2.deleteNode(toDel);
-    cout << endl << "Delete head of linked list" << endl;
-    list2.print();
-
-    Node *toDel2 = new Node(10);
-    list2.deleteNode(toDel2);
-    cout << endl << "Delete node 10" << endl;
-    list2.print();
-
     list2.deleteNode(1);
     cout << endl << "Delete node 1, it should was the head" << endl;
     list2.print();

@@ -3,6 +3,7 @@
 class LinkedList {
     private:
         Node *pHead;
+        void removeDuplicatesAux(Node*);
 
     public:
         LinkedList(void);
@@ -12,5 +13,8 @@ class LinkedList {
         void deleteNode(int);
         void addToTail(Node*);
         void addToTail(int);
+        void removeDuplicatesSpaceCost(void);
+        void removeDuplicatesTimeCostRec(void);
+        void removeDuplicatesTimeCostIt(void);
         void print(void);
 };
