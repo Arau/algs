@@ -11,6 +11,7 @@ class LinkedList {
         LinkedList(int);
 
         Node* nthToLast(int);
+        Node* nthToLastImproved(int);
         void deleteNode(Node*);
         void deleteNode(int);
         void addToTail(Node*);

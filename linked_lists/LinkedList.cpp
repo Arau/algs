@@ -24,18 +24,37 @@ int LinkedList::getSize() {
     return count;
 }
 
-Node* LinkedList::nthToLast(int n) {
+Node* LinkedList::nthToLast (int n) {
     int size = this->getSize();
     Node *result = NULL;
     if (size == n - 1) result = pHead;
     else if (size > n) {
-        int offset = size - n - 1;
+        int offset = size - n;
         result = pHead;
         for (int i = 1; i <= offset; ++i) {
             result = result->pNext;
         }
     }
     return result;
+}
+
+Node* LinkedList::nthToLastImproved (int n) {
+    if (pHead == NULL or n < 1) return NULL;
+
+    Node* p1 = pHead;
+    Node* p2 = pHead;
+
+    // Run p2 n positions
+    for (int i = 0; i < n-1; ++i) {
+        if (p2 == NULL) return NULL; // list size < n
+        p2 = p2->pNext;
+    }
+
+    while (p2->pNext != NULL) {
+        p1 = p1->pNext;
+        p2 = p2->pNext;
+    }
+    return p1;
 }
 
 void LinkedList::deleteNode (Node *del) {
