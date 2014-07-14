@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstddef>
 #include <map>
+#include <vector>
 #include "LinkedList.h"
 
 using namespace std;
@@ -11,6 +12,30 @@ LinkedList::LinkedList () {
 
 LinkedList::LinkedList (int val) {
     pHead = new Node(val);
+}
+
+int LinkedList::getSize() {
+    Node *n = pHead;
+    int count = 1;
+    while (n->pNext != NULL) {
+        n = n->pNext;
+        ++count;
+    }
+    return count;
+}
+
+Node* LinkedList::nthToLast(int n) {
+    int size = this->getSize();
+    Node *result = NULL;
+    if (size == n - 1) result = pHead;
+    else if (size > n) {
+        int offset = size - n - 1;
+        result = pHead;
+        for (int i = 1; i <= offset; ++i) {
+            result = result->pNext;
+        }
+    }
+    return result;
 }
 
 void LinkedList::deleteNode (Node *del) {

@@ -4,11 +4,13 @@ class LinkedList {
     private:
         Node *pHead;
         void removeDuplicatesAux(Node*);
+        int  getSize();
 
     public:
         LinkedList(void);
         LinkedList(int);
 
+        Node* nthToLast(int);
         void deleteNode(Node*);
         void deleteNode(int);
         void addToTail(Node*);
