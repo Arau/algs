@@ -1,3 +1,6 @@
+#ifndef TREE_H
+#define TREE_H
+
 #include "Node.h"
 
 class Tree {
@@ -18,8 +21,11 @@ class Tree {
         Tree(Node *r) : root(r)     {}
         Tree(int val) { root = new Node(val); }
 
+        Node* getRoot(void) { return root; }
         bool find(int);
         bool isBalanced();
         void deleteNode(int);
         void print(void);
 };
+
+#endif

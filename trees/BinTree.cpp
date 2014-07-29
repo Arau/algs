@@ -16,6 +16,11 @@ BinTree::BinTree (int val) {
     root = new BinNode(val);
 }
 
+BinTree::BinTree (Node* r) {
+    srand(time(NULL));
+    root = r;
+}
+
 void BinTree::insertRec (int val, BinNode *parent) {
     Node *l, *r, *n;
     n = new BinNode(val);

@@ -1,3 +1,6 @@
+#ifndef BINTREE_H
+#define BINTREE_H
+
 #include "Tree.h"
 #include "BinNode.h"
 
@@ -7,7 +10,10 @@ class BinTree: public Tree {
 
     public:
         BinTree(void);
-        BinTree(int val);
+        BinTree(int);
+        BinTree(Node*);
 
         void insert(int);
 };
+
+#endif

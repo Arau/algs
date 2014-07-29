@@ -1,3 +1,6 @@
+#ifndef BINNODE_H
+#define BINNODE_H
+
 #include "Node.h"
 
 using namespace std;
@@ -15,3 +18,5 @@ class BinNode : public Node {
         void addLeftChild(int);
         void addRightChild(int);
 };
+
+#endif
